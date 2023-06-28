@@ -1,25 +1,16 @@
-import { useRef } from "react";
 import Image from "next/image";
 import styles from "@/app/assets/style/form.module.css";
+import { ChangeEvent, FormEvent } from "react";
+
 type Props = {
-  handleMessage: (message: string) => void;
+  input: string;
+  handleInputChange: (
+    e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>
+  ) => void;
+  handleSubmit: (e: FormEvent<HTMLFormElement>) => void;
 };
 
-const Form = ({ handleMessage }: Props) => {
-  const inputRef = useRef<HTMLInputElement>(null);
-
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
-    const message = inputRef?.current?.value;
-    if (message === "") {
-      return;
-    }
-    if (inputRef.current) {
-      inputRef.current.value = "";
-    }
-    message && handleMessage(message);
-  };
-
+const Form = ({ input, handleSubmit, handleInputChange }: any) => {
   return (
     <form
       onSubmit={handleSubmit}
@@ -27,10 +18,11 @@ const Form = ({ handleMessage }: Props) => {
     >
       <div className="grid flex-grow card rounded-box place-items-center">
         <input
-          ref={inputRef}
           type="text"
           placeholder="Type here"
           className="input input-ghost input-accent w-full"
+          onChange={handleInputChange}
+          value={input}
         />
       </div>
       <button type="submit" className="btn input-accent">
