@@ -1,0 +1,17 @@
+.chatbot-chat-container {
+  overflow-y: scroll;
+  overflow-x: none;
+  height: 74vh;
+}
+.chatbot-chat-container::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+/* .chatbot-chat-container::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+} */
+
+.chatbot-chat-container::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--b3));
+  outline: 1px solid hsl(var(--bc));
+}

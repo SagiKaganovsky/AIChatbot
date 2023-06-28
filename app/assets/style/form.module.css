@@ -1,0 +1,17 @@
+.chatbot-form-container > button {
+  border-left: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.chatbot-form-container > button:hover {
+  border-color: hsl(var(--a) / var(--tw-border-opacity));
+}
+
+.chatbot-form-container > div > input {
+  border-right: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.chatbot-form-container > div > input:focus {
+  outline: none;
+}
