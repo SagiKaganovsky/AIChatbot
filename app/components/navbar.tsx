@@ -7,8 +7,8 @@ const Navbar = () => {
         <Link href="/" className="btn btn-ghost normal-case text-xl">
           Chat
         </Link>
-        <Link href="/complition" className="btn btn-ghost normal-case text-xl">
-          Complition
+        <Link href="/completion" className="btn btn-ghost normal-case text-xl">
+          Completion
         </Link>
       </div>
       <div className="navbar-end"></div>
