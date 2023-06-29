@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import styles from "@/app/assets/style/chat.module.css";
 import { Message } from "ai";
 import Loader from "./loader";
@@ -7,9 +8,10 @@ type Props = {
   isLoading: boolean;
 };
 
-const Chat = ({ messages, isLoading }: Props) => {
+const Chat = ({ messages, isLoading }: Props, ref: any) => {
   return (
     <div
+      ref={ref}
       className={`artboard artboard-horizontal ${styles["chatbot-chat-container"]}`}
     >
       {messages.map((message: Message, i) => {
@@ -37,4 +39,4 @@ const Chat = ({ messages, isLoading }: Props) => {
   );
 };
 
-export default Chat;
+export default forwardRef(Chat);
